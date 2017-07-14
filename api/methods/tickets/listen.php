@@ -1,5 +1,6 @@
 <?php
 	set_time_limit(60);
+	if(!isset($_COOKIE['secure'])) return json::OUT(['error' => []);
 	for($i = 0; $i < 10; $i++) {
 		$cookie = cookie::get();
 		if(!$cookie && isset($_COOKIE['secure'])) return json::OUT(['error' => ['error_msg' => 'Упс.. Похоже, ваша сессия истекла', 'error_action' => 'logout']]);
