@@ -1,5 +1,6 @@
+sudo mkdir assets/json
 sudo mkdir assets/json/tickets
-sudo chmod 777 assets/json/tickets -R
+sudo chmod 777 assets/json -R
 sudo mkdir errors
 sudo touch errors/error_log
 sudo chmod 777 errors -R
