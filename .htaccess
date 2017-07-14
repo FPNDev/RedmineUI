@@ -1,0 +1,3 @@
+RewriteEngine On
+
+RewriteRule !\.(css|js|png|jpg)$ index.php

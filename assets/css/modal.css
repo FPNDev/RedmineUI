@@ -1,0 +1,54 @@
+#modal_bg {
+    visibility: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    background: rgba(0,0,0,0.9);
+    transition: opacity 200ms linear;
+    -webkit-transition: opacity 200ms linear;
+    -moz-transition: opacity 200ms linear;
+    -ms-transition: opacity 200ms linear;
+    z-index: 50;
+}
+
+#modal_wrap {
+    visibility: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    transition: opacity 200ms linear;
+    -webkit-transition: opacity 100ms linear;
+    -moz-transition: opacity 100ms linear;
+    -ms-transition: opacity 100ms linear;
+    z-index: 51;
+    overflow: auto;
+}
+
+.modal-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+}
+
+.modal-box > .modal-hide {
+    position: absolute;
+    right: 0;
+    margin: 5px;
+    background: url(/assets/img/viewbox_close_icon.png) no-repeat center;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    z-index: 1;
+    padding: 5px;
+    background-clip: content-box;
+}
