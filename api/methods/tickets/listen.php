@@ -2,7 +2,7 @@
 	set_time_limit(60);
 	for($i = 0; $i < 10; $i++) {
 		$cookie = cookie::get();
-		if(!$cookie) return json::OUT(['error' => ['error_action' => 'logout']]);
+		if(!$cookie && isset($_COOKIE['secure'])) return json::OUT(['error' => ['error_msg' => 'Упс.. Похоже, ваша сессия истекла', 'error_action' => 'logout']]);
 		if(($tickets = tickets::get($cookie)) !== false) {
 			$tickets = tickets::idAsKey($tickets);
 			if($tickets) {
