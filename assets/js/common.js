@@ -1,3 +1,6 @@
+window.onerror = function (errorMsg, url, lineNumber, column, errorObj) {
+    return notifier.message(2, 'Во время выполнения JavaScript произошла ошибка.<br><br>Файл: '+url+'<br>Строка: '+lineNumber + '<br>Сообщение: '+errorMsg, 0, 7200);
+}
 let escaper = document.createElement('textarea');
 function $(selector, arg1 = true, arg2 = document) {
 	let context = arg2, all = arg1;
@@ -179,7 +182,9 @@ var modal = {
     show: function(loc, ev) {
         if(ev) ev.preventDefault();
         if(typeof loc != 'string') loc = loc.getAttribute('href');
+        $('*').css('cursor', 'progress');
         ajax.plain(loc, function(data) {
+        	$('*').css('cursor', '');
         	$('#modal_bg', false).css('visibility', 'visible').css('opacity', 1);
         	$('#modal_wrap', false).css('visibility', 'visible').css('opacity', 1).innerHTML = data;
             document.body.style.overflow = 'hidden';

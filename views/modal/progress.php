@@ -1,4 +1,5 @@
 <?php $id = (int) $_GET['id']; ?>
+<?php $ticket = tickets::getInfo($id) ?>
 <div class="modal-box">
 	<div class="modal-hide" onclick="return modal.hide();"></div>
 	<div class="progress-box" id="<?=$id?>">
@@ -7,17 +8,17 @@
             <div class="field-title small-size">Выполнено</div>
             <div class="dropdown-select" for="done"></div>
             <select id="done" class="dropdown-template">
-                <option selected>0%</option>
-                <option>10%</option>
-                <option>20%</option>
-                <option>30%</option>
-                <option>40%</option>
-                <option>50%</option>
-                <option>60%</option>
-                <option>70%</option>
-                <option>80%</option>
-                <option>90%</option>
-                <option>100%</option>
+                <option <?=intval($ticket['done']) == 0 ? 'selected' : ''?>>0%</option>
+                <option <?=intval($ticket['done']) == 10 ? 'selected' : ''?>>10%</option>
+                <option <?=intval($ticket['done']) == 20 ? 'selected' : ''?>>20%</option>
+                <option <?=intval($ticket['done']) == 30 ? 'selected' : ''?>>30%</option>
+                <option <?=intval($ticket['done']) == 40 ? 'selected' : ''?>>40%</option>
+                <option <?=intval($ticket['done']) == 50 ? 'selected' : ''?>>50%</option>
+                <option <?=intval($ticket['done']) == 60 ? 'selected' : ''?>>60%</option>
+                <option <?=intval($ticket['done']) == 70 ? 'selected' : ''?>>70%</option>
+                <option <?=intval($ticket['done']) == 80 ? 'selected' : ''?>>80%</option>
+                <option <?=intval($ticket['done']) == 90 ? 'selected' : ''?>>90%</option>
+                <option <?=intval($ticket['done']) == 100 ? 'selected' : ''?>>100%</option>
             </select>
         </div>
         <div class="progress-field">
