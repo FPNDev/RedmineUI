@@ -34,11 +34,11 @@ var scroll = {
 			if(scroll.isVisible(v)) {
 				let dur = parseInt(v.getAttribute('sDuration')) || 1;
 				let animName = v.getAttribute('sAnim').toString();
-				v.classList.add('animated');
-				v.classList.add(animName);
-				v.style.animationDuration = window.getComputedStyle(v).animationDuration.split(', ').map(function(e) { return parseFloat(e) * dur + 's'; }).join(', ');
 				v.removeAttribute('sAnim');
 				v.removeAttribute('sDuration');
+				v.style.animationDuration = dur + 's';
+				v.classList.add('animated');
+				v.classList.add(animName);
 			}
 		});
 	},
