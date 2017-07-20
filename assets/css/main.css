@@ -264,7 +264,7 @@ a.option:hover {
 	to { transform: rotate(360deg); }
 }
 
-.action-list > div {
+.action-list > a {
 	height: 19px;
     width: 19px;
     margin: 0 3px;
@@ -272,7 +272,7 @@ a.option:hover {
     transition: opacity 0.05s;
 }
 
-.action-list > div:hover {
+.action-list > a:hover {
 	opacity: 1;
 }
 

@@ -11,5 +11,8 @@
 	require_once($_SERVER['DOCUMENT_ROOT'].'/classes/domparser.php');
 	require_once($_SERVER['DOCUMENT_ROOT'].'/classes/html.php');
 	require_once($_SERVER['DOCUMENT_ROOT'].'/classes/redmine.php');
-	require_once($_SERVER['DOCUMENT_ROOT'].'/templates/system.php');
+	if(!handler::getParams()['no_template'] && !$_POST['ajax'])
+		return require_once($_SERVER['DOCUMENT_ROOT'].'/templates/system.php');
+	
+	return handler::path();
 ?>

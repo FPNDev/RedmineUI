@@ -2,10 +2,10 @@
 	<div class="ticket-base">
 		<div class="ticket-id weight-normal middle-size fl-left" sAnim="fadeInLeft"><?=$ticket['type']?> #<?=$ticket['id']?></div>
 		<div class="action-list fl-right">
-			<div class="iblock ticket-back cursor-pointer" onclick="return nav.go('/')"></div>
-			<div class="iblock ticket-correct cursor-pointer" href="/modal/correct.php?id=<?=$ticket['id']?>" onclick="return modal.show(this, event)"></div>
-			<div class="iblock ticket-progress cursor-pointer" href="/modal/progress.php?id=<?=$ticket['id']?>" onclick="return modal.show(this, event)"></div>
-			<div class="iblock ticket-finish cursor-pointer" href="/modal/finish.php?id=<?=$ticket['id']?>" onclick="return modal.show(this, event)"></div>
+			<a class="iblock ticket-back cursor-pointer" onclick="return nav.go('/')"></a>
+			<a class="iblock ticket-correct cursor-pointer" href="/modal/correct.php?id=<?=$ticket['id']?>" onclick="return modal.show(this, event)"></a>
+			<a class="iblock ticket-progress cursor-pointer" href="/modal/progress.php?id=<?=$ticket['id']?>" onclick="return modal.show(this, event)"></a>
+			<a class="iblock ticket-finish cursor-pointer" href="/modal/finish.php?id=<?=$ticket['id']?>" onclick="return modal.show(this, event)"></a>
 		</div>
 	</div>
 	<div class="ticket-info-wrap">

@@ -25,6 +25,26 @@
 
 			return self::renderError();
 		}
+		
+		public static function getParams() {
+			$page = trim(explode('?', explode('#', $_SERVER['REQUEST_URI'])[0])[0], '/');
+			$ini = parse_ini_file($_SERVER['DOCUMENT_ROOT'].'/configs/nav.conf', true);
+			if(isset($ini[$page]) && (!isset($ini[$page]['regex']) || !$ini[$page]['regex'])) {
+				global $_PAGE;
+				if(!isset($ini[$page]['params'])) $ini[$page]['params'] = [];
+				return $ini[$page]['params'];
+			} else {
+				foreach($ini as $k => $val) {
+					if(!isset($val['regex']) || !$val['regex']) continue;
+					$k = str_replace('/', '\/', $k);
+					if(preg_match('/^'.$k.'$/', $page)) {
+						foreach ($val['params'] as $pk => $pval) $val['params'][$pk] = preg_replace('/^'.$k.'$/', $pval, $page);
+						return $val['params'];
+					}
+				}
+			}
+			return [];
+		}
 
 		public static function render($view, $params = []) {
 			global $_PAGE, $_CURL;

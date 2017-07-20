@@ -34,12 +34,16 @@ var ajax = {
 		xhr.open('GET', url, true);
 		xhr.addEventListener('readystatechange', function() {
 			if(this.readyState == 4 && this.status == 200) {
-				let json = JSON.parse(this.response);
-				callback(json);
-				if(json.error && json.error.error_action) {
-					switch(json.error.error_action) {
-						case 'logout': log.out(); break;
+				try {
+					let json = JSON.parse(this.response);
+					callback(json);
+					if(json.error && json.error.error_action) {
+						switch(json.error.error_action) {
+							case 'logout': log.out(); break;
+						}
 					}
+				} catch(e) {
+					return notifier.message(2, 'Произошла ошибка во время парсинга JSON.<br>Сервер ответил: '+HTML.escape(xhr.response));
 				}
 			}
 		});

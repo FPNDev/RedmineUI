@@ -216,7 +216,7 @@ var tickets = {
 									if(!$('select[for="status"] > option[value="'+v.status.replace('"', '\"')+'"]', false)) $('select[for="status"]', false).insertAdjacentHTML('beforeend', '<option value="'+v.status.replace('"', '\"')+'">'+HTML.escape(v.status)+'</option>');
 									el += '<div class="tbl-cell" id="estimated">'+v.estimated+'</div>';
 									el += '<div class="tbl-cell" id="spent">'+v.spent+'</div>';
-									el += '<div class="tbl-cell"><div class="action-list"><div class="ticket-progress cursor-pointer" href="/modal/progress.php?id='+v.id+'?>" onclick="return modal.show(this, event)"></div><div class="ticket-finish cursor-pointer" href="/modal/finish.php?id='+v.id+'" onclick="return modal.show(this, event)"></div><div class="ticket-go cursor-pointer" href="/ticket/'+v.id+'" onclick="return nav.go(this, event)"></div></div></div>';
+									el += '<div class="tbl-cell"><div class="action-list"><a class="iblock ticket-progress cursor-pointer" href="/modal/progress.php?id='+v.id+'?>" onclick="return modal.show(this, event)"></a><a class="iblock ticket-finish cursor-pointer" href="/modal/finish.php?id='+v.id+'" onclick="return modal.show(this, event)"></a><a class="iblock ticket-go cursor-pointer" href="/ticket/'+v.id+'" onclick="return nav.go(this, event)"></a></div></div>';
 									let obj = document.createElement('div');
 									obj.className = 'tbl-row small-size tickets-new';
 									obj.style.background = 'linear-gradient(to right, #d5eed5 '+v.done+'%, #f2f2f2 '+v.done+'%)';

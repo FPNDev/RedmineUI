@@ -58,9 +58,9 @@
 					<div class="tbl-cell" id="spent"><?=$ticket['spent']?></div>
 					<div class="tbl-cell">
 						<div class="action-list">
-							<div class="iblock ticket-progress cursor-pointer" href="/modal/progress.php?id=<?=$ticket['id']?>" onclick="return modal.show(this, event)"></div>
-							<div class="iblock ticket-finish cursor-pointer" href="/modal/finish.php?id=<?=$ticket['id']?>" onclick="return modal.show(this, event)"></div>
-							<div class="iblock ticket-go cursor-pointer" href="/ticket/<?=$ticket['id']?>" onclick="return nav.go(this, event)"></div>
+							<a class="iblock ticket-progress cursor-pointer" href="/modal/progress.php?id=<?=$ticket['id']?>" onclick="return modal.show(this, event)"></a>
+							<a class="iblock ticket-finish cursor-pointer" href="/modal/finish.php?id=<?=$ticket['id']?>" onclick="return modal.show(this, event)"></a>
+							<a class="iblock ticket-go cursor-pointer" href="/ticket/<?=$ticket['id']?>" onclick="return nav.go(this, event)"></a>
 						</div>
 					</div>
 				</div>
